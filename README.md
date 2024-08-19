@@ -91,3 +91,15 @@ python chat_application.py
 - `chat_application.py`: Main script for running the chat application.
 - `database_model.py`: Defines the database schema and models.
 - `requirements.txt`: Lists the Python dependencies.
+
+## Implementation Details
+
+### Why This Approach
+- Database Integration: Using a database ensures messages are persistently stored and can be managed efficiently.
+- Threading for Polling: Implementing a separate thread for polling messages allows the main thread to handle user input without blocking message retrieval.
+- Color Coding: Assigning colours to users enhances the readability of chat messages, making it easier to differentiate between users.
+
+### Planned Features Not Yet Completed
+- User Presence Indicators: Ideally, the application would display real-time notifications when users join or leave the chat.
+- Advanced Validation: Additional validations such as message length limits or content filtering were planned but not implemented due to time constraints.
+- Quoting previous messages while replying
