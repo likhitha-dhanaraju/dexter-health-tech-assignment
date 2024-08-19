@@ -1,5 +1,5 @@
 from sqlalchemy import inspect
-from database_model import engine, session
+from database_model import engine, session, User, Message
 
 # Check the database location
 print(f"Database URL: {engine.url}")

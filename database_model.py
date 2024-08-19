@@ -7,7 +7,7 @@ class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True, nullable=False)
-
+    color = Column(String)
 
 class Message(Base):
     __tablename__ = 'messages'
@@ -15,12 +15,13 @@ class Message(Base):
     content = Column(String, nullable=False)
     sender_id = Column(Integer, ForeignKey('users.id'))
     receiver_id = Column(Integer, ForeignKey('users.id'))
+    session_id = Column(String)
 
     sender = relationship('User', foreign_keys=[sender_id])
     receiver = relationship('User', foreign_keys=[receiver_id])
 
 
-engine = create_engine('sqlite:///messaging_app_v1.db')
+engine = create_engine('sqlite:///messaging_app_v3.db')
 Session = sessionmaker(bind=engine)
 session = Session()
 
